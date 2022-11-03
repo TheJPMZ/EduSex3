@@ -1,0 +1,180 @@
+{
+	"info": {
+		"_postman_id": "0779be9b-1897-4edd-9450-801eaf7f1598",
+		"name": "EduSex-Users",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23780244"
+	},
+	"item": [
+		{
+			"name": "Chat",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Status is not an unexpected status code\", () => {",
+							"  // no devuelva error ",
+							"  const expectedStatusCode = 404;",
+							"",
+							"  pm.response.to.not.have.status(expectedStatusCode);",
+							"});",
+							"",
+							"pm.test(\"API responds\", () => {",
+							"  // que la API responda",
+							"  const expectedTimeInMilliseconds = 500;",
+							"",
+							"  pm.expect(pm.response.responseTime).to.be.lessThan(",
+							"    expectedTimeInMilliseconds + 1,",
+							"    `The endpoint did not respond within ${expectedTimeInMilliseconds} ms. Response came in ${pm.response.responseTime} ms`",
+							"  );",
+							"});",
+							"",
+							"pm.test(\"API response contains the expected fields\", () => {",
+							"  const response = pm.response.json();",
+							"  // verifica que el el contenido de la API sea correto",
+							"  pm.expect(response).to.have.property(\"drollana3214as\");",
+							"",
+							"});",
+							"",
+							"pm.test(\"Body contains string\",() => {",
+							"  // verificar que nuestro body contenga un texto",
+							"  pm.expect(pm.response.text()).to.include(\"Esternocleidomastoideo\");",
+							"});",
+							"",
+							"// Detecta si la key Correo contiene data correcta",
+							"pm.test(\"Chas has username tag\", function () {",
+							"    let jsonData = pm.response.json();",
+							"    pm.expect(jsonData.user).to.include(/^[a-zA-z0-9\\ ]*$/);",
+							"});",
+							"",
+							"// Iteración sobre un array para validar la data",
+							"pm.test(\"Accessing the array\", function () {",
+							"    let jsonData = pm.response.json();",
+							"    pm.expect(jsonData.drollana3214as[\" 1667730287701\"][\"user\"]).to.match(/drollana3214as/);",
+							"    pm.expect(jsonData.drollana3214as[\" 1667730287701\"][\"date\"]).to.match(/6 de noviembre de 2022, 04:24:47 UTC-6/);",
+							"});",
+							"",
+							"// Verifica si la fecha del mensaje existe",
+							"pm.test(\"Date is correct\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData[\"date\"]).to.eql(pm.environment.get(\"date\"));",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/Chat.json",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"Chat.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Chat",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Status is not an unexpected status code\", () => {",
+							"  // no devuelva error ",
+							"  const expectedStatusCode = 404;",
+							"",
+							"  pm.response.to.not.have.status(expectedStatusCode);",
+							"});",
+							"",
+							"pm.test(\"API responds\", () => {",
+							"  // que la API responda",
+							"  const expectedTimeInMilliseconds = 1000;",
+							"",
+							"  pm.expect(pm.response.responseTime).to.be.lessThan(",
+							"    expectedTimeInMilliseconds + 1,",
+							"    `The endpoint did not respond within ${expectedTimeInMilliseconds} ms. Response came in ${pm.response.responseTime} ms`",
+							"  );",
+							"});",
+							"",
+							"// Crear nuevo mensaje basado en fecha",
+							"pm.test(\"Save the date returned in the response as an environment variable\", function () {",
+							"    let jsonResponse = pm.response.json();",
+							"    pm.environment.set(\"date\", jsonResponse.date);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"date\": \"7 de noviembre de 2022, 04:23:10 UTC-6\",\n        \"text\": \"holaa\",\n        \"user\": \"uwuario\"\n}"
+				},
+				"url": {
+					"raw": "{{host}}/Chat/drollana3214as.json",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"Chat",
+						"drollana3214as.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Chat",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/Chat/drollana3214as/-NGJ3LgN42aUdlMS8nqR.json",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"Chat",
+						"drollana3214as",
+						"-NGJ3LgN42aUdlMS8nqR.json"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
