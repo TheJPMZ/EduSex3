@@ -95,7 +95,7 @@ function Condoms({ navigation }) {
               () => navigation.navigate('Screen1')
           }
           >
-            <View style={styles.container}>
+            <View Classname="aniloVagi" style={styles.container}>
               <Image style={styles.image} source={anilloIMG} />
 
               <View style={styles.textContainer}>
