@@ -67,7 +67,7 @@ function Login({ navigation }) {
       <Image style={styles.Ilogin} source={princiIMG} />
       <Text style={styles.TextoLogin}>Hello!!</Text>
       <Text style={styles.subtitulo}>Sign In to your account</Text>
-      <TextInput placeholder="Email" style={styles.TextInput} />
+      <TextInput autoFocus class= "Correo" placeholder="Email" style={styles.TextInput} />
       <TextInput placeholder="Password" style={styles.TextInput} />
       <StatusBar styles="auto" />
       <TouchableOpacity
