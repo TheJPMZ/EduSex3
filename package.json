@@ -10,7 +10,7 @@
     "eject": "expo eject",
     "lint": "eslint . --ext .js --ext .jsx",
     "lint-fix": "eslint . --ext .js --ext .jsx --fix",
-    "test": "jest --coverage -u --detectOpenHandles",
+    "test": "jest --coverage -u --forceExit",
     "cy:run": "cypress run",
     "cy:open": "cypress open"
   },
