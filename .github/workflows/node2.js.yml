@@ -28,6 +28,6 @@ jobs:
 
     - run: npm ci --force
     - run: npm test
-    - run: npm cy:run
+    - run: npm run cy:run
     - run: npm run eject
 
