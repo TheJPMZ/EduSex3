@@ -18,6 +18,8 @@
       "**/*"
     ],
     "ios": {
+      "bundleIdentifier": "com.edusex",
+      "buildNumber": 1,
       "supportsTablet": true
     },
     "android": {
