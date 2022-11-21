@@ -27,7 +27,8 @@ jobs:
         cache: 'npm'
 
     - run: npm ci --force
-    - run: npm test
-    - run: npm run cy:run
+    - run: npm run test
+    - run: npm run web
+    - run: npm run cy:run --record --spec "cypress/e2e/Preservativos.cy.js
     - run: npm run eject
 
