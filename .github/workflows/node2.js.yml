@@ -27,7 +27,7 @@ jobs:
         cache: 'npm'
 
     - run: npm ci --force
-    - run: npm i expo-cli
+    - run: npm i expo-cli --force
     - run: npm run test
     
     - name: Cypress
