@@ -31,7 +31,7 @@ jobs:
     - run: npm run test
     
     - name: Cypress
-      uses: cypress-io/github-action@v4.2.0  
+      uses: cypress-io/github-action@v4.2.0 --force 
       with:
         start: npm run web
         wait-on: 'http://localhost:19006'
